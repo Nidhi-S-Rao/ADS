@@ -1,3 +1,6 @@
+import string
+import random
+
 #Program to sort elements
 def sort(a):
     for i in range(len(a)):
@@ -31,12 +34,18 @@ def evenOdd(a):
 
 #Program to check if 2 lists are same
 def ifListSSame(a,b):
-    f=0
-    for i in a:
-        if i in b:
-            f=1
-    if(f==1):
-        return True
+    if(len(a)==len(b)):
+        for i in a:
+            f=0
+            c=a.count(i)
+            if i not in b or b.count(i) !=c:
+                f=1
+                break
+        
+        if(f==1):
+            return False
+        else:
+            return True
     else:
         return False
     
@@ -143,4 +152,49 @@ def makeDict(tuple):
     dict = {}
     for key, value in tuple:
         dict[key] = value
+    return dict
+
+
+#Program for encrypted string
+def encryption(dict,a):
+    b=[]
+    for i in a:
+        b.append(dict[i])
+    return ''.join(b)
+
+
+#Program to generate random dictionary
+def randomDict(a):
+    dict={}
+    original_alphabet=list(string.ascii_letters)
+    shuffled_alphabet = original_alphabet.copy()
+    random.shuffle(shuffled_alphabet)
+    for original,encrypted in zip(original_alphabet,shuffled_alphabet):
+        dict[original]=encrypted
+    b=encryption(dict,a)
+    return b
+
+#Program to convert marks to grade
+def marksToGrade(mark):
+    if mark >= 90:
+        return 'A+'
+    elif mark >= 80:
+        return 'A'
+    elif mark >= 70:
+        return 'B'
+    elif mark >= 60:
+        return 'C'
+    elif mark >= 50:
+        return 'D'
+    else:
+        return 'F'
+
+#Program to convert marks to grade in dictionary  
+def newDictWithGrade(dict):
+    a=[]
+    for student,subject_marks in dict.items():
+        grades={}
+        for subject,marks in subject_marks.items():
+            grades[subject]=marksToGrade(marks)
+        dict[student]=grades
     return dict

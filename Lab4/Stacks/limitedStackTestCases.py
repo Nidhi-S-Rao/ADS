@@ -18,6 +18,7 @@ def testPop():
     s3.push(30)
     s3.push(40)
     s3.push(50)
+    assert(s3.isStackFull()==False)
     s3.push(60)
     assert(s3.isStackFull()==True)
     assert(s3.getCount()==5)

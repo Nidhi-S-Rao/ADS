@@ -1,0 +1,7 @@
+from Stack S to Stack T. The sequence of elements in T should be same as that of S.
+Implement a function with signature transfer(S,T). This function transfers all elements 
+Match the tags in HTML file using Stack
+Match the parentheses using Stack
+Reverse the content of file using Stack
+Implement limited size Stack
+Implement unlimited size stack

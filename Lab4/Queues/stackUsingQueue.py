@@ -7,8 +7,8 @@ class stackUsingQueue:
         self.q2=SimpleQueue()
     #enquing the element to queue is same as pushin the element to stack
     def pushNew(self,ele):
-        self.q1.enqueue(ele)
-        return self.q1.count
+        #self.q1.enqueue(ele)
+        return self.q1.enqueue(ele)
     #Popping the element from stack should give top element but dequeue operation will give the rear element.
     #So dequeue element from Q1 and enqueue to Q2 until the last elemnt found. The last element is popped. Again all elements from Q2 will be enqued back to Q1
     def popNew(self):

@@ -46,7 +46,7 @@ class CList:
                 self.tail.next=temp
                 self.head=temp
             else:
-                self.tail=self.head
+                self.head=self.tail
             self.count-=1
             return ele
         else:
@@ -57,7 +57,7 @@ class CList:
         if not self.isEmpty():
             ele=self.tail.data
             cur=self.head
-            while(cur!=self.tail):
+            while(cur.next!=self.tail):
                 cur=cur.next
             cur.next=self.head
             self.tail=cur
@@ -79,15 +79,18 @@ class CList:
         else:
             return None
         
-dlist=CList()
-assert(dlist.addAtHead(10)==1)
-assert(dlist.addAtTail(20)==2)
-assert(dlist.addAtHead(5)==3)
-assert(dlist.addAtTail(25)==4)
-assert(dlist.getElements()==[5, 10, 20, 25])
-assert(dlist.deleteAtHead()==5)
-assert(dlist.deleteAtTail()==25)
-assert(dlist.getElements()==[10, 20, 25])
-assert(dlist.deleteAtHead()==10)
-assert(dlist.deleteAtHead()==20)
-print(dlist.getCount())
+clist=CList()
+assert(clist.addAtHead(10)==1)
+assert(clist.addAtTail(20)==2)
+assert(clist.addAtHead(5)==3)
+assert(clist.addAtTail(25)==4)
+assert(clist.getElements()==[5, 10, 20, 25])
+assert(clist.deleteAtHead()==5)
+assert(clist.deleteAtTail()==25)
+assert(clist.getElements()==[10, 20])
+assert(clist.deleteAtTail()==20)
+assert(clist.deleteAtTail()==10)
+assert(clist.addAtHead(10)==1)
+assert(clist.addAtTail(20)==2)
+assert(clist.deleteAtHead()==10)
+assert(clist.deleteAtHead()==20)

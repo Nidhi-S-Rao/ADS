@@ -1,4 +1,4 @@
-#Implementation of Singly Linked List
+#Implementation of Singly Linked List with all conditions
 class SList:
     #Creating a node
     class Node:

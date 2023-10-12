@@ -22,9 +22,10 @@ def is_valid_html(html):
                 while i < len(html) and (html[i].isalnum() or html[i] in ['-', '_']):
                     i += 1
                 tag = html[end:i]
+                #print(tag)
 
                 # Parse attributes
-                attributes = {}
+                """attributes = {}
                 while i < len(html) and html[i] != '>':
                     attr_match = re.match(r'\s*([a-zA-Z_][a-zA-Z0-9_-]*)\s*=\s*("([^"]*)"|\'([^\']*)\')', html[i:])
                     if attr_match:
@@ -33,11 +34,11 @@ def is_valid_html(html):
                         attributes[attr_name] = attr_value
                         i += len(attr_match.group(0))
                     else:
-                        i += 1
+                        i += 1"""
 
                 stack.append(tag)
                 # You can do something with the attributes if needed, e.g., print them
-                print(f"Tag: {tag}, Attributes: {attributes}")
+                #print(f"Tag: {tag}, Attributes: {attributes}")
 
         else:
             i += 1

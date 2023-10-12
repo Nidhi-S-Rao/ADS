@@ -122,6 +122,35 @@ class BST:
         else:
             return False
         
+#To traverse in descending order in a BST
+    def traverseDescendingOrder(self):
+        a=[]
+        if not self.isEmpty():
+            self.descendingOrder(self.root,a)
+            return a
+    def descendingOrder(self,node,a):
+        if node:
+            self.descendingOrder(node.right,a)
+            a.append(node.data)
+            self.descendingOrder(node.left,a)
+
+#To get the height of a binary search tree
+    def getHeight(self):
+        if not self.isEmpty():
+            return(self._getHeight(self.root)+1)
+    
+    def _getHeight(self,node):
+        if node.right and node.left:
+            return max(self._getHeight(node.left),self._getHeight(node.right))
+        else:
+            if node.right:
+                return self._getHeight(node.right)+1
+            elif node.left:
+                return self._getHeight(node.left)+1
+            else:
+                return 1
+            
+        
 
     def deleteNode(self,key):
         if not self.isEmpty():
@@ -144,9 +173,12 @@ class BST:
             else:
                 if node.right==None:
                     node=node.left
+                    self.count-=1
                 else:
-                    node=node.left
-            self.count-=1
+                    node=node.right
+                    self.count-=1
+            
+        return node
     def _findMin(self,node):
         if node.left==None:
             return node
@@ -174,4 +206,20 @@ assert(bst.InOrder()==([25, 30, 40, 45, 50, 55, 60]))
 assert(bst.PreOrder()==([45, 30, 25, 40, 50, 60, 55]))
 assert(bst.PostOrder()==([25, 40, 30, 55, 60, 50, 45]))
 assert(bst.LevelOrder()==([45, 30, 50, 25, 40, 60, 55]))
+assert(bst.getLeafCount()==3)
+assert(bst.traverseDescendingOrder()==([60, 55, 50, 45, 40, 30, 25]))
+assert(bst.getHeight()==4)
 assert(bst.deleteNode(40)==6)
+assert(bst.PreOrder()==([45, 30, 25, 50, 60, 55]))
+assert(bst.deleteNode(25)==5)
+assert(bst.traverseDescendingOrder()==([60, 55, 50, 45,30]))
+assert(bst.InOrder()==([30, 45, 50, 55, 60]))
+assert(bst.deleteNode(45)==4)
+assert(bst.PostOrder()==([30, 55, 60, 50]))
+assert(bst.getHeight()==3)
+assert(bst.addNode(52)==5)
+assert(bst.addNode(40)==6)
+assert(bst.addNode(35)==7)
+assert(bst.addNode(38)==8)
+assert(bst.getHeight()==5)
+assert(bst.getLeafCount()==2)

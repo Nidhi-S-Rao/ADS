@@ -31,6 +31,7 @@ def fileCheck(fileName):
         for line in f:
             assert(checkForParantheses(line)==True)
 
+			
 assert(checkForParantheses("(({[[{{}}]]}))")==True)       
 assert(checkForParantheses("(({{}]]}))")==False)
 fileCheck("hello.txt")

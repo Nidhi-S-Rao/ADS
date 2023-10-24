@@ -3,6 +3,7 @@ attributes of tasks are task-id, priority and execution time. Compute waiting ti
 time for each job. It is treated that 10 is maximum priority and 1 is least priority.Include time range"""
 
 
+
 import heapq
 class Task:
     def __init__(self, task_id, priority, execution_time,arrival_time,deadline):

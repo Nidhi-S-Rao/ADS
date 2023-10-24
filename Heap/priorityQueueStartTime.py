@@ -2,6 +2,7 @@
 attributes of tasks are task-id, priority and execution time. Compute waiting time, turnaround 
 time for each job. It is treated that 10 is maximum priority and 1 is least priority.Include start time and deadline for each job"""
 
+
 class Task:
     def __init__(self, task_id, priority, execution_time,deadline):
         self.task_id = task_id

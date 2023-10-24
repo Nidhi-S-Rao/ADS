@@ -7,6 +7,7 @@ with smallest time stamp (that is, determine the next event to process). Design 
 suitable data structures that work efficiently in terms of time."""
 
 
+
 import heapq
 
 class Event:

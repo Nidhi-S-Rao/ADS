@@ -1,3 +1,4 @@
+#Sorting algorithms
 def bubbleSort(input):
 	for i in range(len(input)-1):
 		for j in range(len(input)-1,i,-1):

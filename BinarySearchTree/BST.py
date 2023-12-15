@@ -1,4 +1,5 @@
 from simpleQueue import *
+from stack import *
 class BST:
     class _Node:
         def __init__(self,ele):
@@ -31,6 +32,8 @@ class BST:
                     parent.right=new_node
             self.count+=1
         return self.count
+   
+        
     def searchNode(self,ele):
         if not self.isEmpty():
             cur=self.root
@@ -103,6 +106,10 @@ class BST:
         else:
             return None
         
+
+    
+    
+     
     def getLeafCount(self):
         if not self.isEmpty():
             return(self._leafCount(self.root))
@@ -149,7 +156,6 @@ class BST:
                 return self._getHeight(node.left)+1
             else:
                 return 1
-            
         
 
     def deleteNode(self,key):
@@ -222,4 +228,6 @@ assert(bst.addNode(40)==6)
 assert(bst.addNode(35)==7)
 assert(bst.addNode(38)==8)
 assert(bst.getHeight()==5)
+print(bst.getH())
 assert(bst.getLeafCount()==2)
+
